@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import AppSidebar from "@/components/layout/app-sidebar";
-import Topbar from "@/components/layout/app-topbar";
+import { AppSidebar } from "@/components/layout/app-sidebar";
+import Topbar from "@/components/layout/topBar";
 
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -43,9 +43,9 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
           transition: "margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        <Topbar onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)} />
+        <Topbar />
         <main style={{ padding: "32px", flex: 1 }}>{children}</main>
       </div>
     </div>
   );
-}\]
+}
